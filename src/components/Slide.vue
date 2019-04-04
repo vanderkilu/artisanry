@@ -21,7 +21,7 @@
             align-items: center;
             flex-direction: column;
             padding: 2rem;
-            margin-top: 6rem;
+            margin-top: 1rem;
         }
         .slide__svg {
             width: 100%;
