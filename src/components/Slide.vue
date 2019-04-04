@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <transition name="slide">
+        <transition :name="transitionName">
             <div class="slide" v-if="incrementor === 1">
                 <img src="../assets/slide1.svg" alt="colloborate slide 1" class="slide__svg">
                 <h3 class="slide__text--large">Colloborate</h3>
@@ -33,7 +33,9 @@
 
 
 <script>
+import { slideAnimation } from './mixins/slideMixin.js'
 export default {
+    mixins: [slideAnimation],
     data() {
         return {
             incrementor: 1,
@@ -49,6 +51,9 @@ export default {
             if (this.incrementor <= 1) return;
             else this.incrementor--
         }
+    },
+    mounted() {
+        console.log(this.transitionName)
     }
 }
 </script>

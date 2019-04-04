@@ -29,5 +29,22 @@ export default {
   *, *::before, *::after {
     font-family:  'Montserrat', sans-serif;
   }
+  .slide-right-enter-active, .slide-right-leave-active {
+        transition: all 0.5s;
+    }
+    .slide-left-enter-active, .slide-left-leave-active {
+        transition: all 0.5s;
+    }
+    .slide-right-enter, .slide-right-leave-to {
+        opacity: 0;
+        transform: translateX(-12rem);
+    }
+    .slide-left-enter, .slide-left-leave-to {
+        opacity: 0;
+        transform: translateX(12rem);
+    }
+    .slide-right-leave-active, .slide-left-leave-active {
+        position: absolute;
+    }
 }
 </style>
