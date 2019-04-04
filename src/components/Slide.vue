@@ -1,32 +1,33 @@
 <template>
     <div class="wrapper">
-        <div class="slide" v-if="incrementor === 1">
-            <img src="../assets/slide1.svg" alt="colloborate slide 1" class="slide__svg">
-            <h3 class="slide__text--large">Colloborate</h3>
-            <p class="slide__text--small">Join and Colloborate with friends and new people to generate ideas</p>
-            <div class="slide__controls">
-                <img class="slide__arr back" src="../assets/back.svg" @click="back">
-                <img class="slide__arr next" src="../assets/next.svg" @click="next">
+        <transition name="slide">
+            <div class="slide" v-if="incrementor === 1">
+                <img src="../assets/slide1.svg" alt="colloborate slide 1" class="slide__svg">
+                <h3 class="slide__text--large">Colloborate</h3>
+                <p class="slide__text--small">Join and Colloborate with friends and new people to generate ideas</p>
+                <div class="slide__controls">
+                    <img class="slide__arr next" src="../assets/next.svg" @click="next">
+                </div>
             </div>
-        </div>
-        <div class="slide" v-if="incrementor === 2">
-            <img src="../assets/slide1.svg" alt="colloborate slide 1" class="slide__svg">
-            <h3 class="slide__text--large">Colloborate</h3>
-            <p class="slide__text--small">Join and Colloborate with friends and new people to generate ideas</p>
-            <div class="slide__controls">
-                <img class="slide__arr back" src="../assets/back.svg" @click="back">
-                <img class="slide__arr next" src="../assets/next.svg" @click="next">
+            <div class="slide" v-if="incrementor === 2">
+                <img src="../assets/slide2.svg" alt="colloborate slide 1" class="slide__svg">
+                <h3 class="slide__text--large">Learn</h3>
+                <p class="slide__text--small">Learn new techniques and skills from people in the same career bound as yours.</p>
+                <div class="slide__controls">
+                    <img class="slide__arr back" src="../assets/back.svg" @click="back">
+                    <img class="slide__arr next" src="../assets/next.svg" @click="next">
+                </div>
             </div>
-        </div>
-        <div class="slide" v-if="incrementor === 3">
-            <img src="../assets/slide1.svg" alt="colloborate slide 1" class="slide__svg">
-            <h3 class="slide__text--large">Colloborate</h3>
-            <p class="slide__text--small">Join and Colloborate with friends and new people to generate ideas</p>
-            <div class="slide__controls">
-                <img class="slide__arr back" src="../assets/back.svg" @click="back">
-                <img class="slide__arr next" src="../assets/next.svg" @click="next">
+            <div class="slide" v-if="incrementor === 3">
+                <img src="../assets/slide3.svg" alt="colloborate slide 1" class="slide__svg">
+                <h3 class="slide__text--large">Connect</h3>
+                <p class="slide__text--small">Connect with new people who share common interests</p>
+                <div class="slide__controls">
+                    <img class="slide__arr back" src="../assets/back.svg" @click="back">
+                    <img class="slide__arr next" src="../assets/next.svg" @click="next">
+                </div>
             </div>
-        </div>
+        </transition>
     </div>
 </template>
 
@@ -41,12 +42,12 @@ export default {
     },
     methods: {
         next() {
-            if (this.incrememtor >= this.howFar) return;
-            return this.incrementor++
+            if (this.incrementor >= this.howFar) return;
+            else this.incrementor++
         },
         back() {
-            if (this.incrementor < 1) return;
-            return this.incrementor--
+            if (this.incrementor <= 1) return;
+            else this.incrementor--
         }
     }
 }
@@ -60,20 +61,20 @@ export default {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            padding: 2rem;
+            padding: 4rem;
             margin-top: 1rem;
         }
         .slide__svg {
             width: 100%;
         }
         .slide__text--large {
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: 600;
             color: #4a148c;
             margin: 2rem 0;
         }
         .slide__text--small {
-            font-size: 1.4rem;
+            font-size: 2rem;
             color: #9e9e9e;
             text-align: center;
         }
@@ -82,8 +83,8 @@ export default {
         }
         .slide__arr {
             margin-top: 2rem;
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 4rem;
+            height: 4rem;
         }
         .back {
             margin-right: 5rem;
