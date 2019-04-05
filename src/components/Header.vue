@@ -1,14 +1,25 @@
 <template>
-    <div class="logo">
+    <div class="logo" @click="routeTo">
         <img src="../assets/logo.png" alt="logo" class="logo__small">
     </div>
 </template>
 
+
+<script>
+export default {
+    methods: {
+        routeTo() {
+            this.$router.push({name: 'home'})
+        }
+    }
+}
+</script>
 <style scoped>
     .logo {
         display: flex;
         justify-content: center;
         align-content: center;
+        cursor: pointer;
     }
     .logo__small {
         width: 15rem;
