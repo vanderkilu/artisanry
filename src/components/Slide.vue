@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <transition-group :name="transitionName">
+        <transition :name="transitionName" mode="out-in">
             <div class="slide" v-if="incrementor === 1" key="1">
                 <img src="../assets/slide1.svg" alt="colloborate slide 1" class="slide__svg">
                 <h3 class="slide__text--large">Colloborate</h3>
@@ -27,7 +27,7 @@
                     <img class="slide__arr next" src="../assets/next.svg" @click="next">
                 </div>
             </div>
-        </transition-group>
+        </transition>
     </div>
 </template>
 

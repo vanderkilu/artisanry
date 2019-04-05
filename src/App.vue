@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <app-header></app-header>
-    <transition name="fade">
+    <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
     
@@ -34,10 +34,10 @@ export default {
     font-family:  'Montserrat', sans-serif;
   }
   .slide-right-enter-active, .slide-right-leave-active {
-        transition: all 0.5s;
+        transition: all 0.35s ease-in-out;
     }
     .slide-left-enter-active, .slide-left-leave-active {
-        transition: all 0.5s;
+        transition: all 0.35s ease-in-out;
     }
     .slide-right-enter, .slide-right-leave-to {
         opacity: 0;
@@ -51,10 +51,10 @@ export default {
         position: absolute;
     }
     .fade-enter-active, .fade-leave-active {
-      transition: all 0.5s;
+      transition: opacity 0.4s;
     }
     .fade-enter, .fade-leave-to {
-      opacity: 1;
+      opacity: 0;
       transform: translateY(6rem);
     }
     a:visited, a:link {
