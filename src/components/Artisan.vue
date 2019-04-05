@@ -41,6 +41,7 @@ export default {
         padding: 2rem 4rem;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 2rem;
+        grid-row-gap: 3rem;
     }
     .artisans__text--main {
         font-size: 2rem;

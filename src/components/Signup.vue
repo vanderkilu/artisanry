@@ -5,13 +5,24 @@
             <input type="text" class="input" placeholder="username">
             <input type="email" class="input" placeholder="email">
             <input type="text" class="input" placeholder="number">
-            <button class="btn btn-fill">Sign up</button>
+            <button class="btn btn-fill" @click.prevent="routeTo">Sign up</button>
             <p class="auth__text--small">Already have an account?    
               <br><router-link :to="{name: 'login'}">sign in here</router-link></p>
         </form>
     </div>
 </template>
 
+<script>
+export default {
+    data() {
+        return {
+            routeTo() {
+                this.$router.push({name: 'artisans'})
+            }
+        }
+    }
+}
+</script>
 
 <style scoped>
    @import url('../assets/auth.css');

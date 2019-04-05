@@ -27,8 +27,8 @@ export default new Router({
       component: Login
     },
     {
-      path: '/artisan',
-      name: 'artisan',
+      path: '/artisans',
+      name: 'artisans',
       component: Artisan
     }
   ]
