@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Slide from './components/Slide'
 import Signup from './components/Signup'
 import Login from './components/Login'
+import Artisan from './components/Artisan'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/artisan',
+      name: 'artisan',
+      component: Artisan
     }
   ]
 })

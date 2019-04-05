@@ -2,7 +2,10 @@
     <div class="artisans">
         <p class="artisans__text--main">Locate an artisan now </p>
         <div class="artisan" v-for="artisan in artisans" :key="artisan.title">
-            <img :src="artisan.photoUrl" :alt="artisan.title" class="artisan__svg">
+            <img src="../assets/barber.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'barber'">
+            <img src="../assets/contractor.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'contractor'">
+            <img src="../assets/fitness.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'fitness'">
+            <img src="../assets/mechanical.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'mechanical'">
             <p class="artisans__text--small">{{artisan.title}}</p>
         </div>
     </div>
@@ -16,19 +19,15 @@ export default {
             artisans: [
                 {
                     title: 'barber',
-                    photoUrl: '../assets/barber.svg'
                 },
                 {
-                    title: 'electrical',
-                    photoUrl: '../assets/electrical.svg'
+                    title: 'contractor',
                 },
                 {
                     title: 'mechanical',
-                    photoUrl: '../assets/mechanical.svg'
                 },
                 {
                     title: 'fitness',
-                    photoUrl: '../assets/fitness.svg'
                 }
             ]
         }
@@ -46,6 +45,8 @@ export default {
     .artisans__text--main {
         font-size: 2rem;
         color: #4a148c;
+        grid-column: 1 / -1;
+        text-align: center;
     }
     .artisans__text--small {
         font-size: 1.5rem;
