@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <app-header></app-header>
-    <transition :name="fade">
+    <transition name="fade">
       <router-view></router-view>
     </transition>
     

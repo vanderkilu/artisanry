@@ -7,7 +7,7 @@
             <input type="text" class="input" placeholder="number">
             <button class="btn btn-fill">Sign up</button>
             <p class="auth__text--small">Already have an account?    
-              <br><router-link :to="{}">sign in here</router-link></p>
+              <br><router-link :to="{name: 'login'}">sign in here</router-link></p>
         </form>
     </div>
 </template>
