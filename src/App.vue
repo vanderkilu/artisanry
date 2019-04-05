@@ -25,6 +25,7 @@ export default {
   body {
     padding: 0;
     margin: 0;
+    background-color: white;
   }
   *, *::before, *::after {
     font-family:  'Montserrat', sans-serif;

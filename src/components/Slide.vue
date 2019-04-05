@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
-        <transition :name="transitionName">
-            <div class="slide" v-if="incrementor === 1">
+        <transition-group :name="transitionName">
+            <div class="slide" v-if="incrementor === 1" key="1">
                 <img src="../assets/slide1.svg" alt="colloborate slide 1" class="slide__svg">
                 <h3 class="slide__text--large">Colloborate</h3>
                 <p class="slide__text--small">Join and Colloborate with friends and new people to generate ideas</p>
@@ -9,7 +9,7 @@
                     <img class="slide__arr next" src="../assets/next.svg" @click="next">
                 </div>
             </div>
-            <div class="slide" v-if="incrementor === 2">
+            <div class="slide" v-if="incrementor === 2" key="2">
                 <img src="../assets/slide2.svg" alt="colloborate slide 1" class="slide__svg">
                 <h3 class="slide__text--large">Learn</h3>
                 <p class="slide__text--small">Learn new techniques and skills from people in the same career bound as yours.</p>
@@ -18,7 +18,7 @@
                     <img class="slide__arr next" src="../assets/next.svg" @click="next">
                 </div>
             </div>
-            <div class="slide" v-if="incrementor === 3">
+            <div class="slide" v-if="incrementor === 3" key="3">
                 <img src="../assets/slide3.svg" alt="colloborate slide 1" class="slide__svg">
                 <h3 class="slide__text--large">Connect</h3>
                 <p class="slide__text--small">Connect with new people who share common interests</p>
@@ -27,7 +27,7 @@
                     <img class="slide__arr next" src="../assets/next.svg" @click="next">
                 </div>
             </div>
-        </transition>
+        </transition-group>
     </div>
 </template>
 
