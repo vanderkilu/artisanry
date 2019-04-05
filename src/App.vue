@@ -46,5 +46,9 @@ export default {
     .slide-right-leave-active, .slide-left-leave-active {
         position: absolute;
     }
+    a:visited, a:link {
+      text-decoration: none;
+      color: #4a148c;
+    }
 }
 </style>

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Slide from './components/Slide'
+import Signup from './components/Signup'
 
 Vue.use(Router)
 
@@ -12,6 +13,11 @@ export default new Router({
       path: '',
       name: 'home',
       component: Slide
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: Signup
     }
   ]
 })
