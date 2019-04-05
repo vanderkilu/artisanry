@@ -1,7 +1,10 @@
 <template>
   <div class="main">
     <app-header></app-header>
-    <router-view></router-view>
+    <transition :name="fade">
+      <router-view></router-view>
+    </transition>
+    
   </div>
 </template>
 
@@ -46,6 +49,13 @@ export default {
     }
     .slide-right-leave-active, .slide-left-leave-active {
         position: absolute;
+    }
+    .fade-enter-active, .fade-leave-active {
+      transition: all 0.5s;
+    }
+    .fade-enter, .fade-leave-to {
+      opacity: 1;
+      transform: translateY(6rem);
     }
     a:visited, a:link {
       text-decoration: none;

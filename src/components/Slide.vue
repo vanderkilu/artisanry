@@ -44,7 +44,9 @@ export default {
     },
     methods: {
         next() {
-            if (this.incrementor >= this.howFar) return;
+            if (this.incrementor >= this.howFar) {
+                this.$router.push({name: 'signup'})
+            }
             else this.incrementor++
         },
         back() {
@@ -66,11 +68,11 @@ export default {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            padding: 4rem;
-            margin-top: 1rem;
+            padding: 1rem 4rem;
+            padding-bottom: 4rem;
         }
         .slide__svg {
-            width: 100%;
+            width: 100%; 
         }
         .slide__text--large {
             font-size: 3rem;
