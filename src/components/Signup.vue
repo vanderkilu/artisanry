@@ -35,7 +35,7 @@ export default {
             }
             let response = await register(data)
             console.log(response)
-            storeToken(response.data._id)
+            storeToken(response.data.token)
             this.$router.push({name: 'artisans'})          
         }
     },
