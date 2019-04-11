@@ -34,6 +34,7 @@
 
 <script>
 import { slideAnimation } from './mixins/slideMixin.js'
+import { EventBus } from '../main'
 export default {
     mixins: [slideAnimation],
     data() {
@@ -55,7 +56,7 @@ export default {
         }
     },
     mounted() {
-        console.log(this.transitionName)
+        EventBus.$emit('SET-HEADER', true)
     }
 }
 </script>

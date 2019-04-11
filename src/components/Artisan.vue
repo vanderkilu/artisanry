@@ -13,6 +13,7 @@
 
 
 <script>
+import { EventBus } from '../main'
 export default {
     data() {
         return {
@@ -31,6 +32,9 @@ export default {
                 }
             ]
         }
+    },
+    mounted() {
+        EventBus.$emit('SET-HEADER', true)
     }
 }
 </script>

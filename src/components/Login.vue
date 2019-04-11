@@ -13,6 +13,7 @@
 
 
 <script>
+import { EventBus } from '../main'
 export default {
     data() {
         return {
@@ -20,6 +21,9 @@ export default {
                 this.$router.push({name: 'artisans'})
             }
         }
+    },
+    mounted() {
+        EventBus.$emit('SET-HEADER', true)
     }
 }
 </script>
