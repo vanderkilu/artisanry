@@ -5,6 +5,7 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import Artisan from './components/Artisan'
 import Users from './components/Users'
+import UserProfile from './components/UserProfile'
 
 Vue.use(Router)
 
@@ -33,9 +34,14 @@ export default new Router({
       component: Artisan
     },
     {
-      path: '/users',
+      path: '/artisans/:id/users',
       name: 'users',
       component: Users
+    },
+    {
+      path: '/users/:id/profile',
+      name: 'user-profile',
+      component: UserProfile
     }
   ]
 })
