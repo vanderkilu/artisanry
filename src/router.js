@@ -4,6 +4,7 @@ import Slide from './components/Slide'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import Artisan from './components/Artisan'
+import Users from './components/Users'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/artisans',
       name: 'artisans',
       component: Artisan
+    },
+    {
+      path: '/users',
+      name: 'users',
+      component: Users
     }
   ]
 })
