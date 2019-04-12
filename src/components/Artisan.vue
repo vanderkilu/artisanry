@@ -2,10 +2,10 @@
     <div class="artisans">
         <p class="artisans__text--main">Locate an artisan now </p>
         <div class="artisan" v-for="artisan in artisans" :key="artisan.title">
-            <img src="../assets/barber.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'barber'">
-            <img src="../assets/contractor.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'contractor'">
-            <img src="../assets/fitness.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'fitness'">
-            <img src="../assets/mechanical.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'mechanical'">
+            <img src="../assets/barber.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'barber'" @click="routeTo('barber')">
+            <img src="../assets/contractor.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'contractor'" @click="routeTo('contractor')">
+            <img src="../assets/fitness.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'fitness'" @click="routeTo('fitness')">
+            <img src="../assets/mechanical.svg" :alt="artisan.title" class="artisan__svg" v-if="artisan.title === 'mechanic'" @click="routeTo('mechanic')">
             <p class="artisans__text--small">{{artisan.title}}</p>
         </div>
     </div>
@@ -25,7 +25,7 @@ export default {
                     title: 'contractor',
                 },
                 {
-                    title: 'mechanical',
+                    title: 'mechanic',
                 },
                 {
                     title: 'fitness',
@@ -35,6 +35,11 @@ export default {
     },
     mounted() {
         EventBus.$emit('SET-HEADER', true)
+    },
+    methods: {
+        routeTo(category) {
+            this.$router.push({name: 'users', params:{id: category}})
+        }
     }
 }
 </script>
@@ -65,5 +70,6 @@ export default {
     }
     .artisan__svg {
         width: 100%;
+        cursor: pointer;
     }
 </style>
