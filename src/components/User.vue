@@ -1,5 +1,5 @@
 <template>
-    <div class="user">
+    <div class="user" @click="routeTo">
         <img src="../assets/profile.png" alt="user-profile" class="user__img">
         <div class="user__profile">
             <p class="user__name">Kit harrignton</p>
@@ -9,6 +9,15 @@
     </div>
 </template>
 
+<script>
+export default {
+    methods: {
+        routeTo() {
+            this.$router.push({name: 'user-profile', params: {id: 1}})
+        }
+    }
+}
+</script>
 
 <style scoped>
 @media (min-width: 320px) {
