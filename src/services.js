@@ -5,9 +5,12 @@ const Axios = axios.create({
 })
 
 const PREFIX = 'artisanry'
+const TYPE = 'ISARTISAN'
 
 const storeToken = (token) => localStorage.setItem(PREFIX, token)
 const getToken = () => localStorage.getItem(PREFIX)
+const storeType = (type) => localStorage.setItem(TYPE, type)
+const getType = () => localStorage.getItem(TYPE)
 
 const register = (data)=> {
     if (data.isArtisan === 'Yes')
@@ -29,5 +32,7 @@ export {
     getToken,
     signIn,
     artisansByCategory,
-    artisan
+    artisan,
+    storeType,
+    getType
 }

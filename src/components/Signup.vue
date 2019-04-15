@@ -33,7 +33,8 @@
 
 <script>
 import { EventBus } from '../main'
-import { register,storeToken,getToken } from '../services'
+import { register,storeToken,
+        getToken, storeType } from '../services'
 export default {
     data() {
         return {
@@ -62,6 +63,7 @@ export default {
             let response = await register(data)
             console.log(response)
             storeToken(response.data.token)
+            storeType(this.isArtisan)
             this.$router.push({name: 'artisans'})          
         }
     },

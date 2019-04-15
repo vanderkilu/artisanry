@@ -5,16 +5,31 @@
             <p class="user__name">{{user.name}}</p>
             <p class="user__profession">{{user.category}}</p>
         </div>
-        <button class="user__btn">follow</button>
+        <button class="user__btn" v-if="isArtisan">follow</button>
+        <button class="user__btn service" v-else @click.stop="bookService"> book service </button>
     </div>
 </template>
 
 <script>
+import { getType } from '../services'
 export default {
+    computed: {
+        isArtisan() {
+            if (getType() === 'Yes') {
+                return true
+            }
+            return false
+        }
+    },
     props: ['user'],
     methods: {
         routeTo() {
-            this.$router.push({name: 'user-profile', params: {id: this.user._id}})
+            if (this.isArtisan) {
+                this.$router.push({name: 'user-profile', params: {id: this.user._id}})
+            } 
+        },
+        bookService() {
+            console.log('testing')
         }
     }
 }
@@ -53,6 +68,13 @@ export default {
         border-radius: 3rem;
         border: 1px solid #4a148c;
         margin: 4rem 0;
+    }
+    .user__btn:focus {
+        outline: none;
+    }
+    .service {
+        font-size: 1.2rem;
+        padding: 1rem;
     }
 }
 </style>
