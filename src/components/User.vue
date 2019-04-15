@@ -14,7 +14,7 @@ export default {
     props: ['user'],
     methods: {
         routeTo() {
-            this.$router.push({name: 'user-profile', params: {id: 1}})
+            this.$router.push({name: 'user-profile', params: {id: this.user._id}})
         }
     }
 }

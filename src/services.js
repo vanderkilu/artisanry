@@ -20,10 +20,14 @@ const signIn = (data)=> {
 const artisansByCategory = (category) => {
     return Axios.get(`/artisans/category/${category}`)
 }
+const artisan = (id) => {
+    return Axios.get(`/artisans/${id}`)
+}
 export {
     register,
     storeToken,
     getToken,
     signIn,
-    artisansByCategory
+    artisansByCategory,
+    artisan
 }

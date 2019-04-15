@@ -1,9 +1,10 @@
 <template>
     <div class="wrapper">
         <div class="user-profile">
-            <img src="../assets/profile.png" alt="" class="user-profile__img">
-            <p class="user-profile__name">Jane Doe</p>
-            <p class="user-profile__profession">carpenter</p>
+            <img :src="user.userPhoto" alt="" class="user-profile__img">
+            <p class="user-profile__name">{{user.name}}</p>
+            <p class="user-profile__profession">{{user.category}}</p>
+            <p class="user-profile__profession">{{user.email}}</p>
             <div class="follow-details">
                 <div class="follow">
                     <p class="follow__count">20K</p>
@@ -25,10 +26,29 @@
 
 <script>
 import { EventBus } from '../main'
+import { artisan } from '../services'
 export default {
+    data() {
+        return {
+            user: {
+                name: '',
+                profession: '',
+                email: '',
+                userPhoto: '../assets/profile.png'
+            }
+        }
+    },
+    methods: {
+        async getArtisan() {
+            const response = await artisan(this.$route.params.id)
+            this.user = response.data.artisan
+            console.log(response)
+        }
+    },
     mounted() {
          EventBus.$emit('SET-HEADER', false)
-    }
+         this.getArtisan()
+    },
 }
 </script>
 
