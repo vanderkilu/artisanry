@@ -33,7 +33,7 @@
 
 <script>
 import { EventBus } from '../main'
-import { register,storeToken } from '../services'
+import { register,storeToken,getToken } from '../services'
 export default {
     data() {
         return {
@@ -63,6 +63,14 @@ export default {
             console.log(response)
             storeToken(response.data.token)
             this.$router.push({name: 'artisans'})          
+        }
+    },
+    beforeRouteEnter(to, from, next) {
+        if (getToken() === null) {
+            next()
+        }
+        else {
+            next({name: 'artisans'})
         }
     },
     mounted() {
