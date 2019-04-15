@@ -17,9 +17,13 @@ const register = (data)=> {
 const signIn = (data)=> {
     return Axios.post(`/users/login`, data)
 }
+const artisansByCategory = (category) => {
+    return Axios.get(`/artisans/category/${category}`)
+}
 export {
     register,
     storeToken,
     getToken,
-    signIn
+    signIn,
+    artisansByCategory
 }

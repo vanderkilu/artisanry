@@ -22,6 +22,7 @@
                     <option>fitness</option>
                 </select>
                 <input type="text" class="input" placeholder="company" v-model="company">
+                <input type="text" class="input" placeholder="photo" v-model="userPhoto">
             </div>
             <button class="btn btn-fill">Sign up</button>
             <p class="auth__text--small">Already have an account?    

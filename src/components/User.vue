@@ -1,9 +1,9 @@
 <template>
     <div class="user" @click="routeTo">
-        <img src="../assets/profile.png" alt="user-profile" class="user__img">
+        <img :src="user.userPhoto" alt="user-profile" class="user__img">
         <div class="user__profile">
-            <p class="user__name">Kit harrignton</p>
-            <p class="user__profession">carpenter</p>
+            <p class="user__name">{{user.name}}</p>
+            <p class="user__profession">{{user.category}}</p>
         </div>
         <button class="user__btn">follow</button>
     </div>
@@ -11,6 +11,7 @@
 
 <script>
 export default {
+    props: ['user'],
     methods: {
         routeTo() {
             this.$router.push({name: 'user-profile', params: {id: 1}})

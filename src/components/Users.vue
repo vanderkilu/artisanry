@@ -1,9 +1,9 @@
 <template>
     <div class="user-container">
         <div class="user-container__category">
-            <h3 class="user-container__text">ARTISANS / CAPENTRY</h3> 
+            <h3 class="user-container__text">ARTISANS / {{category}} </h3> 
         </div>
-        <app-user v-for="user in users" :key="user.id"></app-user>
+        <app-user v-for="user in users" :key="user.id" :user="user"></app-user>
     </div>
 </template>
 
@@ -11,10 +11,18 @@
 <script>
 import User from './User.vue'
 import { EventBus } from '../main'
+import { artisansByCategory } from '../services'
 export default {
     data() {
         return {
-            users: [1,2,3,4,5,6,7]
+            users: [],
+            category: this.$route.params.id
+        }
+    },
+    methods: {
+        async getArtisanByCategory() {
+            const response = await artisansByCategory(this.$route.params.id)
+            this.users = response.data
         }
     },
     components: {
@@ -22,6 +30,8 @@ export default {
     },
     mounted() {
         EventBus.$emit('SET-HEADER', false)
+        this.getArtisanByCategory()
+
     }
 }
 </script>

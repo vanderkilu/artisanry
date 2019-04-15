@@ -29,6 +29,7 @@ export default {
                 password: this.password
             }
             let response = await signIn(data)
+            console.log(response)
             storeToken(response.data.token)
             this.$router.push({name: 'artisans'})
         }
