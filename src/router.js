@@ -7,6 +7,7 @@ import Artisan from './components/Artisan'
 import Users from './components/Users'
 import UserProfile from './components/UserProfile'
 import ChatRoom from './components/ChatRoom'
+import NearestArtisans from './components/NearestArtisans'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
       path: '/artisans',
       name: 'artisans',
       component: Artisan
+    },
+    {
+      path: '/nearest-artisan',
+      name: 'nearest-artisan',
+      component: NearestArtisans
     },
     {
       path: '/artisans/:id/users',

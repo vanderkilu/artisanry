@@ -26,6 +26,9 @@ const artisansByCategory = (category) => {
 const artisan = (id) => {
     return Axios.get(`/artisans/${id}`)
 }
+const nearestArtisan = ()=> {
+    return Axios.get(`/artisans/fakeClosest`)
+}
 export {
     register,
     storeToken,
@@ -34,5 +37,6 @@ export {
     artisansByCategory,
     artisan,
     storeType,
-    getType
+    getType,
+    nearestArtisan
 }
