@@ -2,8 +2,8 @@
     <div class="auth">
         <p class="auth__text--main">Welcome back</p>
         <form  @submit.prevent="login" class="auth__form">
-            <input type="email" class="input" placeholder="email">
-            <input type="password" class="input" placeholder="password">
+            <input type="email" class="input" placeholder="email" v-model="email">
+            <input type="password" class="input" placeholder="password" v-model="password">
             <button class="btn btn-fill"> Sign in </button>
             <p class="auth__text--small">Not have an account yet?    
               <br><router-link :to="{name: 'signup'}">sign up here</router-link></p>
@@ -30,7 +30,7 @@ export default {
             }
             let response = await signIn(data)
             console.log(response)
-            storeToken(response.data.token)
+            storeToken(response.data.name)
             this.$router.push({name: 'artisans'})
         }
     },

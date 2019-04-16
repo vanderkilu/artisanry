@@ -8,15 +8,17 @@
             <div class="follow-details">
                 <div class="follow">
                     <p class="follow__count">20K</p>
-                    <p class="follow__text">following</p>
+                    <p class="follow__text" v-if="isArtisan">followers</p>
+                    <p class="follow__text" v-else>upVotes</p>
                 </div>
                 <div class="follow">
                     <p class="follow__count">500</p>
-                    <p class="follow__text">followers</p>
+                    <p class="follow__text" v-if="isArtisan">following</p>
+                    <p class="follow__text" v-else>positive feedback</p>
                 </div>
             </div>
             <div class="btns">
-                <button class="btn-custom btn-message">message</button>
+                <button class="btn-custom btn-message" @click="$router.push({name: 'chatroom'})">message</button>
                 <button class="btn-custom btn-call">call</button>
             </div>
         </div>
@@ -25,6 +27,7 @@
 </template>
 
 <script>
+import { getType } from '../services'
 import { EventBus } from '../main'
 import { artisan } from '../services'
 export default {
@@ -36,6 +39,14 @@ export default {
                 email: '',
                 userPhoto: '../assets/profile.png'
             }
+        }
+    },
+    computed: {
+        isArtisan() {
+            if (getType() === 'Yes') {
+                return true
+            }
+            return false
         }
     },
     methods: {

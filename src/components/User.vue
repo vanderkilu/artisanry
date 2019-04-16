@@ -6,7 +6,7 @@
             <p class="user__profession">{{user.category}}</p>
         </div>
         <button class="user__btn" v-if="isArtisan">follow</button>
-        <button class="user__btn service" v-else @click.stop="bookService"> book service </button>
+        <button class="user__btn service" v-else @click.stop="bookService"> message </button>
     </div>
 </template>
 
@@ -24,12 +24,10 @@ export default {
     props: ['user'],
     methods: {
         routeTo() {
-            if (this.isArtisan) {
-                this.$router.push({name: 'user-profile', params: {id: this.user._id}})
-            } 
+            this.$router.push({name: 'user-profile', params: {id: this.user._id}})
         },
         bookService() {
-            console.log('testing')
+            this.$router.push({name: 'chatroom'})
         }
     }
 }

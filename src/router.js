@@ -6,6 +6,7 @@ import Login from './components/Login'
 import Artisan from './components/Artisan'
 import Users from './components/Users'
 import UserProfile from './components/UserProfile'
+import ChatRoom from './components/ChatRoom'
 
 Vue.use(Router)
 
@@ -27,6 +28,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/chatroom',
+      name: 'chatroom',
+      component: ChatRoom
     },
     {
       path: '/artisans',
