@@ -1,7 +1,7 @@
 <template>
     <div class="user-container">
         <div class="user-container__category">
-            <h3 class="user-container__text">ARTISANS / {{category}} </h3> 
+            <h3 class="user-container__text">ARTISANS / Nearest  </h3> 
         </div>
         <app-user v-for="user in users" :key="user.id" :user="user"></app-user>
     </div>

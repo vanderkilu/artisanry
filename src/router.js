@@ -41,8 +41,8 @@ export default new Router({
       component: Artisan
     },
     {
-      path: '/nearest-artisan',
-      name: 'nearest-artisan',
+      path: '/nearest-artisans',
+      name: 'nearest-artisans',
       component: NearestArtisans
     },
     {
